@@ -11,8 +11,9 @@ class Commune:
     Reduced representation of a Swiss commune (Gemeinde)
     """
 
-    def __init__(self, key, name, short_name, district, canton):
+    def __init__(self, key, historical_code, name, short_name, district, canton):
         self.key = key
+        self.historical_code = historical_code
         self.name = name
         self.short_name = short_name
         self.district = district
@@ -22,6 +23,7 @@ class Commune:
     def from_json(cls, data):
         return cls(
             key=data.get("key"),
+            historical_code=data.get("historicalCode"),
             name=data.get("name"),
             short_name=data.get("shortName"),
             district=DistrictSummary.from_json(data.get("district")),
