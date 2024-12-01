@@ -8,15 +8,15 @@ class CantonSummary:
     Reduced representation of a Swiss canton (Kanton)
     """
 
-    def __init__(self, key, name, code):
+    def __init__(self, key, name, short_name):
         self.key = key
         self.name = name
-        self.code = code
+        self.short_name = short_name
 
     @classmethod
     def from_json(cls, data):
         return None if not data else cls(
             key=data.get("key"),
             name=data.get("name"),
-            code=data.get("code")
+            short_name=data.get("shortName")
         ) 
