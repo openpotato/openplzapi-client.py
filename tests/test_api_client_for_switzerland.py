@@ -49,9 +49,10 @@ def test_communes_by_district():
     exists_key = False
 
     for commune in communes:
-        if commune.key == "2061":
-            assert commune.name == "Auboranges"
-            assert commune.short_name == "Auboranges"
+        if commune.key == "2063":
+            assert commune.name == "Billens-Hennens"
+            assert commune.historical_code == "14103"
+            assert commune.short_name == "Billens-Hennens"
             assert commune.district.key == "1002"
             assert commune.district.name == "District de la Glâne"
             assert commune.canton.key == "10"
